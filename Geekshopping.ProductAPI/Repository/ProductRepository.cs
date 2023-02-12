@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using Geekshopping.ProductAPI.Data.ValueObjects;
-using Geekshopping.ProductAPI.Model;
-using Geekshopping.ProductAPI.Model.Context;
+using GeekShopping.ProductAPI.Data.ValueObjects;
+using GeekShopping.ProductAPI.Model;
+using GeekShopping.ProductAPI.Model.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Geekshopping.ProductAPI.Repository {
+namespace GeekShopping.ProductAPI.Repository {
     public class ProductRepository : IProductRepository {
         private readonly MySQLContext _context;
         private IMapper _mapper;
@@ -20,7 +20,7 @@ namespace Geekshopping.ProductAPI.Repository {
         }
 
         public async Task<ProductVO> FindById(long id) {
-            Product product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+            Product product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync() ?? new Product();
             return _mapper.Map<ProductVO>(product);
         }
 
@@ -40,7 +40,7 @@ namespace Geekshopping.ProductAPI.Repository {
         public async Task<bool> Delete(long id) {
             try {
                 Product product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
-                if (product == null) {
+                if (product.Id <= 0) {
                     return false;
                 }
                 else {
