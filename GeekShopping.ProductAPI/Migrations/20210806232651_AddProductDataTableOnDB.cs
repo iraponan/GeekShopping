@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
-
 namespace GeekShopping.ProductAPI.Migrations
 {
-    public partial class AddProductTadaTableOnDB : Migration
+    public partial class AddProductDataTableOnDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,24 +11,24 @@ namespace GeekShopping.ProductAPI.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Product",
+                name: "product",
                 columns: table => new
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
+                    name = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Price = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
-                    Description = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: false)
+                    price = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
+                    description = table.Column<string>(type: "varchar(500)", maxLength: 500, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Category_Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                    category_name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Image_URL = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    image_url = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Product", x => x.id);
+                    table.PrimaryKey("PK_product", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
@@ -38,7 +36,7 @@ namespace GeekShopping.ProductAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "product");
         }
     }
 }
