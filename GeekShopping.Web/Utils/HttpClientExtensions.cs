@@ -13,14 +13,14 @@ namespace GeekShopping.Web.Utils {
             return JsonSerializer.Deserialize<T>(dataAsString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
 
-        public static async Task<HttpRequestMessage> PostAsJson<T>(this HttpClient httpClient, string url, T data) {
+        public static async Task<HttpResponseMessage> PostAsJson<T>(this HttpClient httpClient, string url, T data) {
             var dataAsString = JsonSerializer.Serialize(data);
             var content = new StringContent(dataAsString);
             content.Headers.ContentType = contentType;
-            return httpClient.PostAsync(url, content);
+            return await httpClient.PostAsync(url, content);
         }
         
-        public static Task<HttpRequestMessage> PuAsJson<T>(this HttpClient httpClient, string url, T data) {
+        public static Task<HttpResponseMessage> PuAsJson<T>(this HttpClient httpClient, string url, T data) {
             var dataAsString = JsonSerializer.Serialize(data);
             var content = new StringContent(dataAsString);
             content.Headers.ContentType = contentType;
