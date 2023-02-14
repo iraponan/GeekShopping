@@ -21,7 +21,7 @@ namespace GeekShopping.ProductAPI.Controllers {
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductVO>> FindById(long id) {
             var product = await _repository.FindById(id);
-            if (product == null) {
+            if (product.Id <= 0) {
                 return NotFound();
             }
             else {

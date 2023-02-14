@@ -39,7 +39,7 @@ namespace GeekShopping.ProductAPI.Repository {
         }
         public async Task<bool> Delete(long id) {
             try {
-                Product product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+                Product product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync() ?? new Product();
                 if (product.Id <= 0) {
                     return false;
                 }
