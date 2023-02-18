@@ -4,7 +4,7 @@ using Duende.IdentityServer.Models;
 namespace GeekShopping.IdentityServer.Configuration {
     public static class IdentityConfiguration {
         public const string Admin = "Admin";
-        public const string Customer = "Customer";
+        public const string Client = "Client";
 
         public static IEnumerable<IdentityResource> identityResources => new List<IdentityResource> {
             new IdentityResources.OpenId(),
@@ -39,10 +39,10 @@ namespace GeekShopping.IdentityServer.Configuration {
                 },
                 AllowedGrantTypes = GrantTypes.Code,
                 RedirectUris = {
-                    "http://localhost:29683/signin-oidc"
+                    "https://localhost:4430/signin-oidc"
                 },
                 PostLogoutRedirectUris = {
-                    "http://localhost:29683/signout-callback-oidc"
+                    "https://localhost:4430/signout-callback-oidc"
                 },
                 AllowedScopes = new List<string> {
                     IdentityServerConstants.StandardScopes.OpenId,
