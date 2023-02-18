@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.ProductAPI", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeekShopping.Web", "GeekShopping.Web\GeekShopping.Web.csproj", "{CABDE2FF-2FD7-4C1B-99D6-973373656964}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekShopping.IdentityServer", "GeekShopping.IdentityServer\GeekShopping.IdentityServer.csproj", "{B4D8A66E-11F6-4A61-AADD-6B22D525BA28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{CABDE2FF-2FD7-4C1B-99D6-973373656964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CABDE2FF-2FD7-4C1B-99D6-973373656964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CABDE2FF-2FD7-4C1B-99D6-973373656964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D8A66E-11F6-4A61-AADD-6B22D525BA28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D8A66E-11F6-4A61-AADD-6B22D525BA28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D8A66E-11F6-4A61-AADD-6B22D525BA28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D8A66E-11F6-4A61-AADD-6B22D525BA28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C6503A79-CB5C-4D0F-9A6F-5188E371521F} = {0F991477-BA64-480B-83A8-5908835A32E9}
 		{CABDE2FF-2FD7-4C1B-99D6-973373656964} = {C843C5BA-D5D9-41C7-A3B6-55D4F18BBC45}
+		{B4D8A66E-11F6-4A61-AADD-6B22D525BA28} = {0F991477-BA64-480B-83A8-5908835A32E9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27198A20-8880-4067-B408-C7EBAB448BCA}
